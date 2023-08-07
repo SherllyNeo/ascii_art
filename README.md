@@ -33,3 +33,10 @@ bash that turns input file $1, to a header to be compiled by C
 '''{bash}
 cat $1 > art; xxd -i art | tac | sed "3s/$/, 0x00/" | tac > src_files/art.h; rm art;
 '''
+
+
+credit to 
+mini_json library https://minijson.readthedocs.io/en/latest/index.html
+
+and 
+https://github.com/asweigart/asciiartjsondb for the ascii art
