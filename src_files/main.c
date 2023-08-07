@@ -3,40 +3,11 @@
 #include <string.h>
 #include "mjson.h"
 #include <stddef.h>
-#include "config.h"
 #include "art.h"
 
-#define SIZE 8000
-#define ATTACHMENT_SIZE 8000
-#define MAXOBJECTS  80000
-
-char* read_attachment(char* file_path) {
-    char * buffer = 0;
-    long length;
-    FILE * f = fopen(file_path, "rb");
-
-    if (f)
-    {
-        fseek (f, 0, SEEK_END);
-        length = ftell (f);
-        fseek (f, 0, SEEK_SET);
-        buffer = malloc (length*2);
-        if (buffer)
-        {
-            fread (buffer, 1, length, f);
-        }
-        fclose (f);
-    }
-
-    if (buffer)
-    {
-        buffer[length] = '\0';
-        return buffer;
-    }
-    return NULL;
-
-
-}
+#define SIZE 80000
+#define ATTACHMENT_SIZE 80000
+#define MAXOBJECTS  800000
 
 
 /* Data object to model */
@@ -86,9 +57,9 @@ int json_object_list_read(const char *buf, struct Art_Obj_list *obj_list) {
 int main(int argc, char *argv[])
 {
     char json_list[ATTACHMENT_SIZE];
-    char* attachment_buffer = read_attachment(ASCII_JSON_FILE);
+    char* attachment_buffer = art;
+    printf("\n%s\n",art);
     strncpy(json_list,attachment_buffer,ATTACHMENT_SIZE);
-    free(attachment_buffer);
 
 
 
