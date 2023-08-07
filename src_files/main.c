@@ -5,9 +5,9 @@
 #include <stddef.h>
 #include "art.h"
 
-#define SIZE 80000
-#define ATTACHMENT_SIZE 80000
-#define MAXOBJECTS  800000
+#define SIZE 8000
+#define ATTACHMENT_SIZE 8000
+#define MAXOBJECTS  80000
 
 
 /* Data object to model */
@@ -58,9 +58,8 @@ int main(int argc, char *argv[])
 {
     char json_list[ATTACHMENT_SIZE];
     char* attachment_buffer = art;
-    printf("\n%s\n",art);
-    strncpy(json_list,attachment_buffer,ATTACHMENT_SIZE);
-
+   // strncpy(json_list,argv[1],ATTACHMENT_SIZE);
+    strncpy(json_list,attachment_buffer,art_len);
 
 
 
