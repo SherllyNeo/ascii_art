@@ -1,12 +1,7 @@
 # A simple ascii art app
 
-useage
-
---help for help
-
---random for some random art
-
---select for selection menu
+usage 
+runs and it'll print random ascii art
 
 
 
